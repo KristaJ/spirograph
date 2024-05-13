@@ -102,7 +102,7 @@ def plot_spiro(M, N, p, color, num_points):
     # todo calculate actual value for theta
     min_num = min(M, N)
     t = np.linspace(start = 0, stop=2*min_num*pi, num = num_points, endpoint = True)
-    t = [x.round(4) for x in t] #rounding to avoid near miss overlap
+    t = [x.round(7) for x in t] #rounding to avoid near miss overlap
     t[-1] = 2*min_num*pi
     x = [formulaX(M, N, p, a) for a in t]
     y = [formulaY(M, N, p, a) for a in t]
@@ -121,8 +121,8 @@ def main():
 
     R = col1A.slider('Outer Radius', 1, 100)
     r = col1A.slider('Inner Radius', 1, 100)
-    p = col1A.slider('Pen offset', .1, 1.0, step = .001)
-    num_points = col1A.slider('points', 100, 10000, step=100)
+    p = col1A.slider('Pen offset', 0.0, 1.0, step = .1)
+    num_points = col1A.slider('points', 100, 5000, step=100)
 
 
     a = Fraction(R, r)
