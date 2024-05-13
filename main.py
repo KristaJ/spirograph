@@ -1,4 +1,3 @@
-from turtle import *
 from math import *
 from plotly import graph_objects as go
 import numpy as np
